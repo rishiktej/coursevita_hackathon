@@ -1,0 +1,121 @@
+/* src/styles/Navbar.css */
+.navbar {
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text color */
+    padding: 0.5rem 1rem; /* Adjusted padding */
+    width: 100%; /* Ensure the navbar takes full width */
+    position: relative; /* Needed for responsive positioning */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between; /* Space between start, center, and end */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    width: 100%; /* Full width for container */
+  }
+  
+  .navbar-start {
+    display: flex;
+    align-items: center; /* Center align items vertically */
+    flex-shrink: 0; /* Prevent from shrinking */
+  }
+  
+  .navbar-center {
+    display: flex;
+    gap: 1rem; /* Adjust spacing between links */
+    flex-grow: 1; /* Allow to grow and use available space */
+    justify-content: center; /* Center the links */
+    margin-left: -5rem;
+  }
+  
+  .navbar-end {
+    display: flex;
+    align-items: center; /* Center align items vertically */
+    flex-shrink: 0; /* Prevent from shrinking */
+  }
+  
+  .nav-link {
+    color: #000000; /* Black text color */
+    text-decoration: none;
+    padding: 0.5rem;
+    font-size: 1rem; /* Adjust font size if needed */
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .user-icon-button {
+    color: #000000;
+    background: none; /* Remove default button background */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Pointer cursor for button */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Center icon within button */
+    align-items: center;
+  }
+  
+  .dropdown {
+    position: absolute;
+  }
+  
+  .dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Place it below the button */
+    right: 0; /* Position it on the right */
+    background-color: #fff; /* Darker background for dropdown */
+    border: 1px solid #444444; /* Slightly lighter border */
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    z-index: 1000; /* Ensure dropdown is on top */
+    min-width: 120px; /* Adjust width as needed */
+  }
+  
+  .dropdown-menu.show {
+    display: block; /* Display the menu when the "show" class is added */
+  }
+  
+  .dropdown-item {
+    display: block;
+    color: #000000; /* Black text color */
+    text-decoration: none;
+    padding: 0.5rem; /* Add padding for spacing */
+  }
+  
+  .dropdown-item:hover {
+    background-color: grey; /* Lighter background on hover */
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem; /* Adjusted size */
+    margin-right: 10px;
+  }
+  
+  .text-3xl {
+    font-size: 1.875rem; /* Adjusted size */
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-center {
+      display: none; /* Hide center links on smaller screens */
+    }
+  
+    .navbar-container {
+      flex-direction: column; /* Stack items vertically */
+    }
+  
+    .navbar-start, .navbar-end {
+      width: 100%; /* Full width for start and end sections */
+      justify-content: center; /* Center items */
+      margin: 0; /* Remove margins */
+    }
+  
+    .dropdown-menu {
+      min-width: 100px; /* Smaller width for mobile */
+    }
+  }
+  

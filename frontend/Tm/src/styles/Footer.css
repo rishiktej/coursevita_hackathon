@@ -1,0 +1,46 @@
+.footer-container {
+    background-color: #000; /* Dark background color for footer */
+    color: #fff; /* White text color */
+    padding: 2rem; /* Add padding */
+    text-align: center; /* Center align the text */
+    position: relative; /* Ensure it remains relative to the flow */
+    width: 100%; /* Footer should occupy full width */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Set a max-width for the footer content */
+    margin: 0 auto; /* Center content horizontally */
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+}
+
+.footer-bottom {
+    text-align: right; /* Align text to the right */
+}
+
+.footer-text {
+    font-size: 1rem; /* Standard font size for footer text */
+    margin: 0; /* Remove default margin */
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the end */
+    margin-top: 0.5rem; /* Space above the contact info */
+}
+
+.mail-icon {
+    margin-right: 0.5rem; /* Space between the icon and email */
+}
+
+.contact-email {
+    color: #fff; /* White color for email */
+    text-decoration: none; /* Remove underline */
+}
+
+.contact-email:hover {
+    text-decoration: underline; /* Underline on hover */
+}

@@ -4,9 +4,27 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const dotenv = require('dotenv');
 const router = express.Router();
-
+const app = express();
 dotenv.config();
 // Register a new user
+app.use(express.json());
+
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+
+
+app.use(
+    session({
+        secret: 'SecretKey1234',
+        resave: false,
+        saveUninitialized: false,
+        store: MongoStore.create({
+            mongoUrl: 'mongodb+srv://rishiktejreddy:rishiktej%406@users.y3uz0.mongodb.net/?retryWrites=true&w=majority&appName=Users', // Use your MongoDB connection string
+        }),
+        cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 1-day session duration
+    })
+);
+
 router.post('/register', async (req, res) => {
     const { name, username, email, password, expertised_skills } = req.body;
 
@@ -71,27 +89,17 @@ router.post('/login', async (req, res) => {
             return res.status(400).json({ msg: 'Invalid credentials' });
         }
 
-        const payload = {
-            user: {
-                id: user.id,
-                expertised_skills: user.expertised_skills,
-                email: user.email,
-                username: user.username,
-            },
-        };
+        // Store user ID in session
+        req.session.userId = user.id;
 
-        jwt.sign(
-            payload,
-            process.env.SECRETKEY,
-            (err, token) => {
-                if (err) throw err;
-                res.json({ token, expertised_skills: user.expertised_skills, email: user.email, username: user.username });
-            }
-        );
+        res.status(201).json({ msg: 'User logged in successfully', user });
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server error');
     }
 });
+
+
+
 
 module.exports = router;

@@ -1,0 +1,10 @@
+/* ProgressBar.css */
+.progress-bar-container {
+    width: 200px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+    margin: auto; /* Center horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

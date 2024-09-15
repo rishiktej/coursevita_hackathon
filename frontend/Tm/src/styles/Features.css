@@ -1,0 +1,169 @@
+/* Styles for the problem statement section */
+.features-section {
+     /* Consistent padding for top/bottom and left/right */
+    position: relative;
+    width:auto;
+    /* Ensure it spans the full width */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 columns */
+    gap: 2rem; /* Spacing between grid items */
+    max-width: 1200px; /* Optional: limit the overall width of the grid */
+    margin: 0 auto; /* Center the grid on the page */
+}
+
+
+
+.problem-statement {
+    margin-bottom: 4rem;
+}
+
+.problem-heading {
+    font-size: 2rem;
+    color: #000000; /* Black color */
+    margin: 0;
+    text-align: center; /* Center heading */
+    margin-bottom: 2rem;
+}
+
+.problem-paragraph-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.problem-paragraph {
+    font-size: 1.125rem;
+    color: #333;
+    max-width: 50vw; /* Adjust the width to fit half screen */
+    margin: 0;
+    padding: 3rem;
+}
+
+.problem-image {
+    max-width: 350px; /* Adjust size to fit content */
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 2%;
+    margin-top: 1rem;
+    margin-left: 3rem;
+}
+
+/* Styles for the DreamRoute features section */
+.dreamroute-features {
+    padding: 2rem 2rem;
+    margin-top: 1rem;
+}
+
+.features-heading {
+    font-size: 2rem;
+    color: #000000; /* Black color */
+    margin-bottom: 2rem;
+    text-align: center; /* Center heading */
+    line-height: 1.2; /* Ensures heading fits in two lines */
+}
+
+.features-subheading {
+    font-size: 1.125rem;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center; /* Center subheading */
+}
+
+.features-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    max-width: 800px; /* Keep the width consistent */
+    width: 100%; /* Ensure the container takes full width available */
+    margin: 0 auto; /* Center containers */
+    opacity: 0; /* Initially hidden for animation */
+    transform: translateY(20px); /* Initially off-screen for animation */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition */
+}
+
+.feature-item.animate {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide in */
+}
+
+.feature-item.row-left {
+    flex-direction: row; /* Image on left, content on right */
+}
+
+.feature-item.row-right {
+    flex-direction: row-reverse; /* Content on left, image on right */
+}
+
+/* Add slight alignment variations for image positioning */
+.feature-item.row-left .feature-image {
+    margin-right: 1rem; /* Space between image and content */
+}
+
+.feature-item.row-right .feature-image {
+    margin-left: 1rem; /* Space between content and image */
+}
+
+.feature-image {
+    width: 200px; /* Adjust the size as needed */
+    height: auto;
+    object-fit: cover;
+}
+
+.feature-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content left */
+    padding: 1rem; /* Add padding */
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.feature-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.feature-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff; /* Adjust the button color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feature-button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 columns */
+    gap: 2rem; /* Spacing between grid items */
+    max-width: 1200px; /* Optional: limit the overall width of the grid */
+    margin: 0 auto; /* Center the grid on the page */
+}

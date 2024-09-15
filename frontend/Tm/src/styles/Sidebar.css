@@ -1,0 +1,67 @@
+/* src/styles/Sidebar.css */
+
+.sidebar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 25%; /* 1/4 of the width */
+    height: 100%;
+    background-color: #2d3748; /* Dark background color */
+    color: #edf2f7; /* Light text color */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+  
+  .dropdown-button {
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem; /* text-sm */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-button:hover {
+    background-color: #2b6cb0; /* Darker blue on hover */
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 11rem; /* Width of the dropdown */
+    display: none; /* Hidden by default */
+  }
+  
+  .dropdown-menu.show {
+    display: block; /* Display when the dropdown is open */
+  }
+  
+  .dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropdown-menu .dropdown-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #4a5568;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-menu .dropdown-item:hover {
+    background-color: #f7fafc; /* Light background color on hover */
+    color: #2d3748;
+  }
+  

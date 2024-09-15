@@ -5,6 +5,14 @@ const User = require('../models/User');
 const nodemailer = require('nodemailer');
 
 // POST /tasks
+
+function authMiddleware(req, res, next) {
+    if (!req.session.userId) {
+        return res.status(401).json({ msg: 'Unauthorized, please log in' });
+    }
+    next();
+}
+
 router.post('/tasks', async (req, res) => {
     const {
         title,
@@ -66,6 +74,15 @@ const transporter = nodemailer.createTransport({
 });
 
 router.use(express.json());
+router.get('/user/tasks', authMiddleware, async (req, res) => {
+    try {
+        const tasks = await Task.find({ assignedTo: req.session.userId }); // Fetch tasks based on user ID
+        res.status(200).json(tasks);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+});
 
 router.get('/alltasks', async (req, res) => {
     try {
